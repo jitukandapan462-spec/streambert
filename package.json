@@ -22,6 +22,8 @@
     "dist:mac": "cross-env ELECTRON_DIST=1 vite build && electron-builder --mac --universal --publish never"
   },
   "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/core": "^8.6.0",
     "approve": "^0.0.12",
     "hls.js": "1.5.17",
     "react": "^18.2.0",
@@ -29,6 +31,7 @@
     "scripts": "^0.1.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.6.0",
     "@vitejs/plugin-react": "^4.7.0",
     "cross-env": "^7.0.3",
     "electron": "^45.2.1",
@@ -133,25 +136,25 @@
         {
           "target": "AppImage",
           "arch": [
-            "x64"
+            "arm64"
           ]
         },
         {
           "target": "deb",
           "arch": [
-            "x64"
+            "arm64"
           ]
         },
         {
           "target": "rpm",
           "arch": [
-            "x64"
+            "arm64"
           ]
         },
         {
           "target": "pacman",
           "arch": [
-            "x64"
+            "arm64"
           ]
         }
       ],
@@ -187,6 +190,6 @@
   "allowScripts": {
     "electron@40.10.6": true,
     "electron-winstaller@5.4.0": true,
-    "esbuild@0.28.1": true
+    "esbuild@0.28.2": true
   }
 }
