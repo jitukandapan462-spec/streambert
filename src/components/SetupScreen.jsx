@@ -8,7 +8,7 @@ async function validateToken(token) {
   try {
     const pingRes = await fetch(`${TMDB_BASE}/configuration`, {
       headers: { Authorization: `Bearer ${token}` },
-      signal: AbortSignal.timeout(7000),
+      signal: AbortSignal.timeout(20000),
     });
 
     // TMDB is reachable — now check the response
@@ -25,7 +25,7 @@ async function validateToken(token) {
     // Step 2: Run a real content request to confirm full API access
     const testRes = await fetch(`${TMDB_BASE}/trending/movie/week`, {
       headers: { Authorization: `Bearer ${token}` },
-      signal: AbortSignal.timeout(7000),
+      signal: AbortSignal.timeout(20000),
     });
     if (!testRes.ok) {
       return { ok: false, reason: "api_error", status: testRes.status };
