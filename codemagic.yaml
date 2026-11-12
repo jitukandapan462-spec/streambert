@@ -15,7 +15,7 @@ workflows:
         script: npm ci
 
       - name: Build web application
-        script: npm run build
+        script: npx vite build
 
       - name: Sync Capacitor Android
         script: npx cap sync android
